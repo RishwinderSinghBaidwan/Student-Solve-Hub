@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+<title>Event Schedules With Tabs - Bootdey.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+    	body {
+    padding-top:0 px;
+    background:#f9f9f9;
+}
+
+.evt-tab-inner {
+  margin-bottom: 80px;
+}
+.evt-tab-inner ul {
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+}
+.evt-tab-inner ul li {
+  text-align: center;
+  display: contents;
+}
+.evt-tab-inner ul li a {
+  border: 1px solid var(--main-color) !important;
+  height: 100px;
+  line-height: 100px;
+  padding: 0;
+  width: 33.33%;
+  border-radius: 0 !important;
+  font-size: 24px;
+  position: relative;
+}
+.evt-tab-inner ul li a span {
+  font-weight: 700;
+  margin-right: 25px;
+  color: #20202c;
+}
+.evt-tab-inner ul li a:after {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: var(--main-color);
+  transform: rotate(45deg);
+  left: 50%;
+  margin-left: -15px;
+  bottom: -16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in;
+}
+.evt-tab-inner ul li a:hover, .evt-tab-inner ul li a:active, .evt-tab-inner ul li a:focus, .evt-tab-inner ul li a.active {
+  background: var(--main-color) !important;
+  color: #fff !important;
+}
+.evt-tab-inner ul li a:hover span, .evt-tab-inner ul li a:active span, .evt-tab-inner ul li a:focus span, .evt-tab-inner ul li a.active span {
+  color: #fff;
+}
+.evt-tab-inner ul li a:hover:after, .evt-tab-inner ul li a:active:after, .evt-tab-inner ul li a:focus:after, .evt-tab-inner ul li a.active:after {
+  opacity: 1;
+  visibility: visible;
+}
+.evt-tab-inner.style-two ul li a {
+  width: 50%;
+}
+
+.single-schedules-inner {
+    background-color:#fff;
+  box-shadow: 0px 3px 15px 0px rgba(184, 40, 88, 0.08);
+  padding: 30px 30px 35px 30px;
+  margin-bottom: 30px;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+.single-schedules-inner .date {
+  color: var(--main-color);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.single-schedules-inner .date i {
+  color: #646e85;
+  margin-right: 3px;
+}
+.single-schedules-inner h5 {
+  line-height: 36px;
+  margin-bottom: 18px;
+}
+.single-schedules-inner .icons {
+  margin-bottom: 20px;
+}
+.single-schedules-inner p {
+  margin-bottom: 0;
+}
+.single-schedules-inner .media {
+  margin-top: 43px;
+}
+.single-schedules-inner .media .media-left {
+  margin-right: 15px;
+}
+.single-schedules-inner .media .media-left img {
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+}
+.single-schedules-inner .media .media-body h6 {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.single-schedules-inner .media .media-body p {
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+.single-schedules-inner:hover {
+  box-shadow: 0px 6px 30px 0px rgba(184, 40, 88, 0.2);
+}
+.single-schedules-inner.lunch-schedules {
+  height: 93.1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*------------- single-schedules-inner 02--------------*/
+.single-schedules-inner-two {
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+.single-schedules-inner-two .schedules-date {
+  display: inline-block;
+  background: var(--main-color);
+  height: 150px;
+  width: 150px;
+  padding-top: 35px;
+  position: absolute;
+}
+.single-schedules-inner-two .schedules-date .number {
+  font-size: 45px;
+  font-weight: 700;
+  display: block;
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1;
+}
+.single-schedules-inner-two .schedules-date .text {
+  font-size: 24px;
+  font-weight: 400;
+  display: block;
+  color: #fff;
+}
+.single-schedules-inner-two .media {
+  padding-left: 170px;
+}
+.single-schedules-inner-two .media .media-left {
+  margin-right: 20px;
+}
+.single-schedules-inner-two .media .media-body h4 {
+  font-size: 28px;
+  font-family: var(--heading-font);
+  font-weight: 500;
+}
+.single-schedules-inner-two .schedules-location h4 {
+  font-size: 28px;
+  font-family: var(--heading-font);
+  font-weight: 500;
+}
+
+/*------------- single-schedules-inner 03--------------*/
+.schedules-date {
+  display: inline-block;
+  background: var(--main-color);
+  height: 150px;
+  width: 150px;
+  padding-top: 35px;
+  position: absolute;
+}
+.schedules-date .number {
+  font-size: 45px;
+  font-weight: 700;
+  display: block;
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1;
+}
+.schedules-date .text {
+  font-size: 24px;
+  font-weight: 400;
+  display: block;
+  color: #fff;
+}
+
+.event-schedule-3 {
+  margin: 0;
+  padding: 0;
+}
+.event-schedule-3 li {
+  padding-left: 176px;
+  position: relative;
+  list-style: none;
+}
+.event-schedule-3 li:after {
+  content: "";
+  position: absolute;
+  left: 70px;
+  top: 140px;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  height: 100%;
+  width: 1px;
+  z-index: -2;
+}
+.event-schedule-3 li:last-child:after {
+  display: none;
+}
+.event-schedule-3 .schedules-date {
+  left: 0;
+  width: 147px;
+  height: 140px;
+  background: #FD0156;
+}
+.event-schedule-3 .schedules-date:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: -10px;
+  background: #5E39E8;
+  z-index: -1;
+}
+
+.single-event-schedule-3 {
+  background: #fff;
+  padding: 50px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.single-event-schedule-3:after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  bottom: -20px;
+  background: #5E39E8;
+  z-index: -1;
+}
+.single-event-schedule-3 .media-left {
+  margin-right: 50px;
+}
+.single-event-schedule-3 .media-left img {
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.single-event-schedule-3 .media-left h6 {
+  margin-bottom: 0;
+  color: #eee;
+}
+.single-event-schedule-3 .media-left p {
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #eee;
+}
+.single-event-schedule-3 .media-body h4 {
+  margin-bottom: 5px;
+  color: #eee;
+}
+.single-event-schedule-3 .media-body p {
+  color: #eee;
+}
+.single-event-schedule-3 .media-body .time {
+  margin-bottom: 0;
+  color: #eee;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #20B2AA !important;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+.evt-tab-inner ul li a:hover, .evt-tab-inner ul li a:active, .evt-tab-inner ul li a:focus, .evt-tab-inner ul li a.active {
+    background: #eee !important;
+    color: #fff !important;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+.evt-tab-inner ul li a {
+    border: 1px solid var(--main-color) !important;
+    height: 100px;
+    line-height: 100px;
+    padding: 0;
+    width: 33.33%;
+    border-radius: 0 !important;
+    font-size: 24px;
+    position: relative;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+    </style>
+    <link rel="stylesheet" href="./css/style.css">
+   
+
+    <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <!-- awesome fonts -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+<!-- favicon  -->
+<link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="image/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="image/favicon/android-chrome-512x512.png">
+<link rel="manifest" href="image/favicon/site.webmanifest">
+
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid container">
+    <a class="navbar-brand" href="#"><i class="fas fa-user-graduate"></i>  SSH<span id="dot">.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="about.html">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Buy
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Drafter</a></li>
+            <li><a class="dropdown-item" href="#">Sheet Box</a></li>
+            <li><a class="dropdown-item" href="#">Calculator</a></li>
+            <li><a class="dropdown-item" href="#">Notes</a></li>
+            <li><a class="dropdown-item" href="#">Dress</a></li>
+            <li><a class="dropdown-item" href="#">Books</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./Event_Schedules_With_Tabs.html">Events</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link  btn  btn-block  add2" href="#"> Login <i class="fas fa-sign-in-alt"></i> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn  btn-block add" href="#"><i class="fas fa-plus"></i> Add Place</a>
+        </li>
+        <li class="nav-item">
+          <a class=" nav-link btn btn-warning btn-block add3" href="#"><i class="fas fa-shopping-cart"></i> Sell</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+<br>
+
+<div class="schedules-area pd-top-110 pd-bottom-120">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-7 col-lg-8">
+<div class="section-title text-center">
+<h2>Event Schedules</h2>
+<p>This section is dedicated to various events taking place in the college. Here we will provide ithe information related to all the events along with registration links. </p>
+<br>
+</div>
+</div>
+</div>
+<div class="evt-tab-inner text-center">
+<ul class="nav nav-tabs" id="ex1" role="tablist">
+<li class="nav-item" role="presentation">
+<a class="nav-link active" id="ex1-tab-1" data-toggle="pill" href="#ex1-tabs-1" role="tab" aria-selected="true"><span>Day 1</span>27 Feb 2024</a>
+</li>
+<li class="nav-item" role="presentation">
+<a class="nav-link" id="ex1-tab-2" data-toggle="pill" href="#ex1-tabs-2" role="tab" aria-selected="false"><span>Day 2</span>28 Feb 2024</a>
+</li>
+<li class="nav-item" role="presentation">
+<a class="nav-link" id="ex1-tab-3" data-toggle="pill" href="#ex1-tabs-3" role="tab" aria-selected="false"><span>Day 3</span>29 Feb 2024</a>
+</li>
+</ul>
+</div>
+<div class="tab-content" id="ex1-content">
+<div class="tab-pane fade active show" id="ex1-tabs-1" role="tabpanel">
+<div class="row">
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -10:30am
+</div>
+<h5>Welcome of the guests.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+10:20am -1:30pm
+</div>
+<h5>Display of science projects.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner lunch-schedules text-center">
+<div class="lunch-schedules-inner align-self-center">
+<div class="icons">
+<img src="https://www.bootdey.com/image/200x200/00FFFF/000000" alt="img">
+</div>
+<h5>Lunch Break</h5>
+<div class="date">
+<i class="fa fa-clock-o"></i>
+1:30pm -3:30pm
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+3:00pm -4:30pm
+</div>
+<h5>Sci stroke competition.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+4:30pm -5:00pm
+</div>
+<h5>Science Quest.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+5:00pm -5:10pm
+</div>
+<h5>ITech Hunt.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel">
+<div class="row">
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Welcome address by anchors.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner lunch-schedules text-center">
+<div class="lunch-schedules-inner align-self-center">
+<div class="icons">
+<img src="https://www.bootdey.com/image/200x200/00FFFF/000000" alt="img">
+</div>
+<h5>Lunch Break</h5>
+<div class="date">
+<i class="fa fa-clock-o"></i>
+1:00pm -1:30pm
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>About Science Day.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Improving the quality of the management.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Improving the quality of the management.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Improving the quality of the management.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel">
+<div class="row">
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Improving the quality of the management.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Improving the quality of the management.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner lunch-schedules text-center">
+<div class="lunch-schedules-inner align-self-center">
+<div class="icons">
+<img src="https://www.bootdey.com/image/200x200/FF1493/000000" alt="img">
+</div>
+<h5>Lunch Break</h5>
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Improving the quality of the management.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Improving the quality of the management.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="single-schedules-inner">
+<div class="date">
+<i class="fa fa-clock-o"></i>
+9:00am -1:30pm
+</div>
+<h5>Improving the quality of the management.</h5>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+<div class="media">
+<div class="media-left">
+<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="img">
+</div>
+<div class="media-body align-self-center">
+<h6>Dr. Ariful Islam Abid</h6>
+<p>Ceo of AIA software agency, USA.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+   
+<!-- cta  -->
+<section class="deneb_cta">
+	<div class="container">
+		<div class="cta_wrapper cta11">
+			<div class="row align-items-center">
+				<div class="col-lg-7">
+					<div class="cta_content">
+						<h3>Have Any Query in Mind ?</h3>
+						<p style="line-height: 1.6;">The project “Student Solve Hub” aims to help the students or bachelors from another city/state. In this website, the data of all the lodges and mess and many more things will be already recorded.</p>
+					</div>
+				</div>
+				<div class="col-lg-5">
+					<div class="button_box">
+						<a href="mailto:info@shd.com" class="btn btn-warning">Contact Us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</section>
+<!-- footer-->
+<footer class="deneb_footer">
+	<div class="widget_wrapper" style="background-image: url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png);">
+    <br>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="widget widegt_about">
+						<div class="widget_title">
+							<div class="widget_title">
+							<h2><a href="#"><i class="fas fa-user-graduate"></i> SSH<span id="dot">.</span></a></h2>
+						</div>
+						</div>
+      
+						<p style="line-height: 1.6;">Students just have to visit to our site and to their desired section and we are damn sure that they will find a reasonable solution.</p>
+						<ul class="social">
+							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+					<div class="widget widget_link">
+						<div class="widget_title">
+							<h4>Links</h4>
+						</div>
+					 <p>
+          <a href="#">About</a>
+        </p>
+        <p>
+          <a href="#!">Buy</a>
+        </p>
+        <p>
+          <a href="#!">Lodge</a>
+        </p>
+        <p>
+          <a href="#!">Mess</a>
+        </p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="widget widget_contact">
+						<div class="widget_title">
+							<h4>Contact Us</h4>
+						</div>
+						<div class="contact_info">
+							<div class="single_info">
+								<div class="icon">
+									<i class="fas fa-phone-alt"></i>
+								</div>
+								<div class="info">
+									<p><a href="tel:+919246147999">+91 9123456789</a></p>
+
+								</div>
+							</div>
+							<div class="single_info">
+								<div class="icon">
+									<i class="fas fa-envelope"></i>
+								</div>
+								<div class="info">
+									<p><a href="mailto:info@deneb.com">info@ssh.com</a></p>
+									
+								</div>
+							</div>
+							<div class="single_info">
+								<div class="icon">
+									<i class="fas fa-map-marker-alt"></i>
+								</div>
+								<div class="info">
+                  <p>CGC, Landran</p>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="copyright_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="copyright_text">
+						<p>Copyright &copy; 2021 <a class="text-dark" href="#"> Studnet Solve Hub</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
